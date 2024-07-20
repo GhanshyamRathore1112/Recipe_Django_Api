@@ -22,7 +22,7 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
 
         return user
-    
+
     def create_superuser(self, email, password):
         """Create and return a new superuser."""
         user = self.create_user(email, password)
@@ -31,7 +31,7 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
 
         return user
-    
+
 
 class User(AbstractBaseUser, PermissionsMixin):
     """User in the system."""
@@ -61,7 +61,7 @@ class Recipe(models.Model):
 
     def __str__(self):
         return self.title
-    
+
 
 class Tag(models.Model):
     """Tag for filtering recipes."""
@@ -73,7 +73,7 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.name
-    
+
 
 class Ingredient(models.Model):
     """Ingredient for recipes."""
@@ -85,4 +85,3 @@ class Ingredient(models.Model):
 
     def __str__(self):
         return self.name
-    
